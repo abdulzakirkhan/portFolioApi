@@ -21,6 +21,7 @@ export const authApi = apiSlice.injectEndpoints({
     getMe: builder.query({
       query: () => '/api/auth/me',
       providesTags: ['User'],
+      transformResponse: (response) => response, // Keep the response structure as-is
     }),
     logout: builder.mutation({
       query: () => ({
