@@ -6,6 +6,12 @@ import SignupForm from './components/auth/SignupForm';
 import SigninForm from './components/auth/SigninForm';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import Dashboard from './pages/Dashboard';
+import Profile from './pages/Profile';
+import Sections from './pages/Sections';
+import Items from './pages/Items';
+import Categories from './pages/Categories';
+import Translations from './pages/Translations';
+import Files from './pages/Files';
 import { apiSlice } from './services/api';
 import { useGetMeQuery } from './services/authApi';
 import { setUser, logout } from './store/authSlice';
@@ -38,6 +44,54 @@ function AppContent() {
         element={
           <ProtectedRoute>
             <Dashboard />
+          </ProtectedRoute>
+        } 
+      />
+      <Route 
+        path="/dashboard/profile" 
+        element={
+          <ProtectedRoute>
+            <Profile />
+          </ProtectedRoute>
+        } 
+      />
+      <Route 
+        path="/dashboard/sections" 
+        element={
+          <ProtectedRoute>
+            <Sections />
+          </ProtectedRoute>
+        } 
+      />
+      <Route 
+        path="/dashboard/items" 
+        element={
+          <ProtectedRoute>
+            <Items />
+          </ProtectedRoute>
+        } 
+      />
+      <Route 
+        path="/dashboard/categories" 
+        element={
+          <ProtectedRoute>
+            <Categories />
+          </ProtectedRoute>
+        } 
+      />
+      <Route 
+        path="/dashboard/strings" 
+        element={
+          <ProtectedRoute>
+            <Translations />
+          </ProtectedRoute>
+        } 
+      />
+      <Route 
+        path="/dashboard/files" 
+        element={
+          <ProtectedRoute>
+            <Files />
           </ProtectedRoute>
         } 
       />

@@ -26,6 +26,13 @@ app.use(express.urlencoded({ extended: true }));
 
 // Routes
 app.use('/api/auth', require('./routes/auth'));
+app.use('/api/dashboard', require('./routes/dashboard'));
+app.use('/api/profile', require('./routes/profile'));
+app.use('/api/sections', require('./routes/sections'));
+app.use('/api/categories', require('./routes/categories'));
+app.use('/api/items', require('./routes/items'));
+app.use('/api/files', require('./routes/files'));
+app.use('/api/translations', require('./routes/translations'));
 
 // Health check route
 app.get('/health', (req, res) => {
