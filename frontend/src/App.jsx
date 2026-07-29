@@ -7,6 +7,7 @@ import SigninForm from './components/auth/SigninForm';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import Dashboard from './pages/Dashboard';
 import Profile from './pages/Profile';
+import AboutMe from './pages/AboutMe';
 import Sections from './pages/Sections';
 import Items from './pages/Items';
 import Categories from './pages/Categories';
@@ -52,6 +53,14 @@ function AppContent() {
         element={
           <ProtectedRoute>
             <Profile />
+          </ProtectedRoute>
+        } 
+      />
+      <Route 
+        path="/dashboard/about" 
+        element={
+          <ProtectedRoute>
+            <AboutMe />
           </ProtectedRoute>
         } 
       />

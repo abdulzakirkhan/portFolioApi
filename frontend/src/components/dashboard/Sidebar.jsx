@@ -18,6 +18,11 @@ const Sidebar = () => {
       label: 'Profile'
     },
     {
+      path: '/dashboard/about',
+      icon: 'fa-id-card',
+      label: 'About Me'
+    },
+    {
       path: '/dashboard/sections',
       icon: 'fa-layer-group',
       label: 'Sections'
