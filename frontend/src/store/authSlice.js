@@ -8,19 +8,16 @@ const initialState = {
   error: null,
 };
 
-// Load user and token from localStorage
+// Load token from localStorage only (user data from database)
 const loadFromStorage = () => {
   try {
-    const user = localStorage.getItem('user');
     const token = localStorage.getItem('token');
     return {
-      user: user ? JSON.parse(user) : null,
       token: token || null,
       isAuthenticated: !!token,
     };
   } catch (error) {
     return {
-      user: null,
       token: null,
       isAuthenticated: false,
     };
@@ -42,9 +39,11 @@ const authSlice = createSlice({
       state.loading = false;
       state.error = null;
       
-      // Save to localStorage
-      localStorage.setItem('user', JSON.stringify(user));
+      // Save only token to localStorage (user data from database)
       localStorage.setItem('token', token);
+    },
+    setUser: (state, action) => {
+      state.user = action.payload;
     },
     logout: (state) => {
       state.user = null;
@@ -54,7 +53,6 @@ const authSlice = createSlice({
       state.error = null;
       
       // Clear localStorage
-      localStorage.removeItem('user');
       localStorage.removeItem('token');
     },
     clearError: (state) => {
@@ -72,6 +70,7 @@ const authSlice = createSlice({
 
 export const {
   setCredentials,
+  setUser,
   logout,
   clearError,
   setLoading,

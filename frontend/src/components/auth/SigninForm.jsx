@@ -96,7 +96,7 @@ const SigninForm = () => {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className={`w-full px-4 py-3 bg-base-bg-light border rounded-lg text-texts placeholder-muted focus-outline-none focus-ring-2 focus-ring-primary ${
+                className={`w-full px-4 py-3 bg-base-bg-light border rounded-lg text-texts placeholder-muted focus:outline-none focus:ring-2 focus:ring-primary ${
                   validationErrors.email ? 'border-danger' : 'border-borders'
                 }`}
                 placeholder="john@example.com"
@@ -117,7 +117,7 @@ const SigninForm = () => {
                 name="password"
                 value={formData.password}
                 onChange={handleChange}
-                className={`w-full px-4 py-3 bg-base-bg-light border rounded-lg text-texts placeholder-muted focus-outline-none focus-ring-2 focus-ring-primary ${
+                className={`w-full px-4 py-3 bg-base-bg-light border rounded-lg text-texts placeholder-muted focus:outline-none focus:ring-2 focus:ring-primary ${
                   validationErrors.password ? 'border-danger' : 'border-borders'
                 }`}
                 placeholder="••••••••"
@@ -131,7 +131,7 @@ const SigninForm = () => {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full bg-primary hover-bg-primary-80 text-dark font-semibold py-3 px-4 rounded-lg transition duration-200 disabled-opacity-50 disabled-cursor-not-allowed font-heading"
+              className="w-full bg-primary hover:bg-primary/80 text-dark font-semibold py-3 px-4 rounded-lg transition duration-200 disabled:opacity-50 disabled:cursor-not-allowed font-heading"
             >
               {isLoading ? 'Signing In...' : 'Sign In'}
             </button>
@@ -141,7 +141,7 @@ const SigninForm = () => {
           <div className="mt-6 text-center">
             <p className="text-secondary">
               Don't have an account?{' '}
-              <a href="/signup" className="text-primary hover-text-primary-80 font-medium">
+              <a href="/signup" className="text-primary hover:text-primary/80 font-medium">
                 Sign Up
               </a>
             </p>

@@ -1,17 +1,24 @@
+const dns = require('dns');
+
+dns.setServers([
+  '8.8.8.8',
+  '8.8.4.4'
+]);
 require('dotenv').config();
+console.log("ENV CHECK");
+console.log("PORT:", process.env.PORT);
+console.log("DB_NAME:", process.env.DB_NAME);
+console.log("MONGO EXISTS:", !!process.env.MONGODB_URI);
 const express = require('express');
 const cors = require('cors');
-const connectDB = require('./config/database');
+const { connectDB } = require('./config/database');
 
 // Initialize app
 const app = express();
 
-// Connect to database
-connectDB();
-
 // Middleware
 app.use(cors({
-  origin: process.env.CORS_ORIGIN || 'http://localhost:3000',
+  origin: process.env.CORS_ORIGIN,
   credentials: true
 }));
 app.use(express.json());
@@ -19,6 +26,14 @@ app.use(express.urlencoded({ extended: true }));
 
 // Routes
 app.use('/api/auth', require('./routes/auth'));
+app.use('/api/dashboard', require('./routes/dashboard'));
+app.use('/api/profile', require('./routes/profile'));
+app.use('/api/about', require('./routes/about'));
+app.use('/api/sections', require('./routes/sections'));
+app.use('/api/categories', require('./routes/categories'));
+app.use('/api/items', require('./routes/items'));
+app.use('/api/files', require('./routes/files'));
+app.use('/api/translations', require('./routes/translations'));
 
 // Health check route
 app.get('/health', (req, res) => {
@@ -41,4 +56,10 @@ app.use((err, req, res, next) => {
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`);
+  console.log(`API available at http://localhost:${PORT}`);
+});
+
+// Try to connect to database (non-blocking)
+connectDB().catch(err => {
+  console.error('Database connection failed (server still running):', err.message);
 });
