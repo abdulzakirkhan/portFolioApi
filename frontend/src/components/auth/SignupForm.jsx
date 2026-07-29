@@ -111,7 +111,7 @@ const SignupForm = () => {
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                className={`w-full px-4 py-3 bg-base-bg-light border rounded-lg text-texts placeholder-muted focus-outline-none focus-ring-2 focus-ring-primary ${
+                className={`w-full px-4 py-3 bg-base-bg-light border rounded-lg text-texts placeholder-muted focus:outline-none focus:ring-2 focus:ring-primary ${
                   validationErrors.name ? 'border-danger' : 'border-borders'
                 }`}
                 placeholder="John Doe"
@@ -132,7 +132,7 @@ const SignupForm = () => {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className={`w-full px-4 py-3 bg-base-bg-light border rounded-lg text-texts placeholder-muted focus-outline-none focus-ring-2 focus-ring-primary ${
+                className={`w-full px-4 py-3 bg-base-bg-light border rounded-lg text-texts placeholder-muted focus:outline-none focus:ring-2 focus:ring-primary ${
                   validationErrors.email ? 'border-danger' : 'border-borders'
                 }`}
                 placeholder="john@example.com"
@@ -153,7 +153,7 @@ const SignupForm = () => {
                 name="password"
                 value={formData.password}
                 onChange={handleChange}
-                className={`w-full px-4 py-3 bg-base-bg-light border rounded-lg text-texts placeholder-muted focus-outline-none focus-ring-2 focus-ring-primary ${
+                className={`w-full px-4 py-3 bg-base-bg-light border rounded-lg text-texts placeholder-muted focus:outline-none focus:ring-2 focus:ring-primary ${
                   validationErrors.password ? 'border-danger' : 'border-borders'
                 }`}
                 placeholder="••••••••"
@@ -174,7 +174,7 @@ const SignupForm = () => {
                 name="confirmPassword"
                 value={formData.confirmPassword}
                 onChange={handleChange}
-                className={`w-full px-4 py-3 bg-base-bg-light border rounded-lg text-texts placeholder-muted focus-outline-none focus-ring-2 focus-ring-primary ${
+                className={`w-full px-4 py-3 bg-base-bg-light border rounded-lg text-texts placeholder-muted focus:outline-none focus:ring-2 focus:ring-primary ${
                   validationErrors.confirmPassword ? 'border-danger' : 'border-borders'
                 }`}
                 placeholder="••••••••"
@@ -188,7 +188,7 @@ const SignupForm = () => {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full bg-primary hover-bg-primary-80 text-dark font-semibold py-3 px-4 rounded-lg transition duration-200 disabled-opacity-50 disabled-cursor-not-allowed font-heading"
+              className="w-full bg-primary hover:bg-primary/80 text-dark font-semibold py-3 px-4 rounded-lg transition duration-200 disabled:opacity-50 disabled:cursor-not-allowed font-heading"
             >
               {isLoading ? 'Creating Account...' : 'Sign Up'}
             </button>
@@ -198,7 +198,7 @@ const SignupForm = () => {
           <div className="mt-6 text-center">
             <p className="text-secondary">
               Already have an account?{' '}
-              <a href="/signin" className="text-primary hover-text-primary-80 font-medium">
+              <a href="/signin" className="text-primary hover:text-primary/80 font-medium">
                 Sign In
               </a>
             </p>

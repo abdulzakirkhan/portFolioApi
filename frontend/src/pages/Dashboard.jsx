@@ -31,7 +31,7 @@ const Dashboard = () => {
               </span>
               <button
                 onClick={handleLogout}
-                className="bg-danger hover-bg-danger-80 text-texts-inverted px-4 py-2 rounded-lg transition duration-200 font-heading"
+                className="bg-danger hover:bg-danger/80 text-texts-inverted px-4 py-2 rounded-lg transition duration-200 font-heading"
               >
                 Logout
               </button>
@@ -47,7 +47,7 @@ const Dashboard = () => {
             Dashboard Overview
           </h2>
           
-          <div className="grid grid-cols-1 md-grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Stats Cards */}
             <div className="bg-base-boards rounded-lg p-6 border border-borders">
               <h3 className="text-lg font-semibold text-texts mb-2 font-heading">
