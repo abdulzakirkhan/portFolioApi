@@ -8,9 +8,11 @@ import ProtectedRoute from './components/auth/ProtectedRoute';
 import Dashboard from './pages/Dashboard';
 import Profile from './pages/Profile';
 import AboutMe from './pages/AboutMe';
+import Education from './pages/Education';
 import Sections from './pages/Sections';
 import Items from './pages/Items';
 import Categories from './pages/Categories';
+import Skills from './pages/Skills';
 import Translations from './pages/Translations';
 import Files from './pages/Files';
 import { apiSlice } from './services/api';
@@ -65,6 +67,14 @@ function AppContent() {
         } 
       />
       <Route 
+        path="/dashboard/education" 
+        element={
+          <ProtectedRoute>
+            <Education />
+          </ProtectedRoute>
+        } 
+      />
+      <Route 
         path="/dashboard/sections" 
         element={
           <ProtectedRoute>
@@ -77,6 +87,14 @@ function AppContent() {
         element={
           <ProtectedRoute>
             <Items />
+          </ProtectedRoute>
+        } 
+      />
+      <Route 
+        path="/dashboard/skills" 
+        element={
+          <ProtectedRoute>
+            <Skills />
           </ProtectedRoute>
         } 
       />
