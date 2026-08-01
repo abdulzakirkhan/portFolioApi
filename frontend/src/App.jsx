@@ -10,6 +10,7 @@ import Profile from './pages/Profile';
 import AboutMe from './pages/AboutMe';
 import Education from './pages/Education';
 import Experience from './pages/Experience';
+import Portfolio from './pages/Portfolio';
 import Sections from './pages/Sections';
 import Items from './pages/Items';
 import Categories from './pages/Categories';
@@ -80,6 +81,14 @@ function AppContent() {
         element={
           <ProtectedRoute>
             <Experience />
+          </ProtectedRoute>
+        } 
+      />
+      <Route 
+        path="/dashboard/portfolio" 
+        element={
+          <ProtectedRoute>
+            <Portfolio />
           </ProtectedRoute>
         } 
       />
