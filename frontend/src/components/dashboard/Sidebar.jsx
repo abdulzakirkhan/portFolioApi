@@ -28,6 +28,11 @@ const Sidebar = () => {
       label: 'Experience'
     },
     {
+      path: '/dashboard/portfolio',
+      icon: 'fa-folder-open',
+      label: 'Portfolio'
+    },
+    {
       path: '/dashboard/skills',
       icon: 'fa-star',
       label: 'Skills'
