@@ -23,6 +23,11 @@ const Sidebar = () => {
       label: 'Education'
     },
     {
+      path: '/dashboard/experience',
+      icon: 'fa-briefcase',
+      label: 'Experience'
+    },
+    {
       path: '/dashboard/skills',
       icon: 'fa-star',
       label: 'Skills'
