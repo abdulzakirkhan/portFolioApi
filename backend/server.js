@@ -25,8 +25,9 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Serve static files for education logos
+// Serve static files for education and experience logos
 app.use('/educationLogos', express.static(path.join(__dirname, 'public/educationLogos')));
+app.use('/experienceLogos', express.static(path.join(__dirname, 'public/experienceLogos')));
 
 // Routes
 app.use('/api/auth', require('./routes/auth'));
@@ -40,6 +41,7 @@ app.use('/api/files', require('./routes/files'));
 app.use('/api/translations', require('./routes/translations'));
 app.use('/api/education', require('./routes/education'));
 app.use('/api/skills', require('./routes/skills'));
+app.use('/api/experiences', require('./routes/experiences'));
 
 // Health check route
 app.get('/health', (req, res) => {

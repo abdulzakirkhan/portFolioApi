@@ -1,3 +1,4 @@
+clear
 # MongoDB Database Storage Setup Guide
 
 ## 🎯 Database Storage Configuration
