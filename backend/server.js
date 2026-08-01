@@ -1,4 +1,5 @@
 const dns = require('dns');
+const path = require('path');
 
 dns.setServers([
   '8.8.8.8',
@@ -24,6 +25,9 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Serve static files for education logos
+app.use('/educationLogos', express.static(path.join(__dirname, 'public/educationLogos')));
+
 // Routes
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/dashboard', require('./routes/dashboard'));
@@ -34,6 +38,8 @@ app.use('/api/categories', require('./routes/categories'));
 app.use('/api/items', require('./routes/items'));
 app.use('/api/files', require('./routes/files'));
 app.use('/api/translations', require('./routes/translations'));
+app.use('/api/education', require('./routes/education'));
+app.use('/api/skills', require('./routes/skills'));
 
 // Health check route
 app.get('/health', (req, res) => {

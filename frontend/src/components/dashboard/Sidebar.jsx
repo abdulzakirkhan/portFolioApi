@@ -18,9 +18,14 @@ const Sidebar = () => {
       label: 'Profile'
     },
     {
-      path: '/dashboard/about',
-      icon: 'fa-id-card',
-      label: 'About Me'
+      path: '/dashboard/education',
+      icon: 'fa-graduation-cap',
+      label: 'Education'
+    },
+    {
+      path: '/dashboard/skills',
+      icon: 'fa-star',
+      label: 'Skills'
     },
     {
       path: '/dashboard/sections',
