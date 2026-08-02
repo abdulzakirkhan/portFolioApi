@@ -33,6 +33,16 @@ const Sidebar = () => {
       label: 'Portfolio'
     },
     {
+      path: '/dashboard/achievements',
+      icon: 'fa-award',
+      label: 'Achievements'
+    },
+    {
+      path: '/dashboard/updates',
+      icon: 'fa-rss',
+      label: 'Updates'
+    },
+    {
       path: '/dashboard/skills',
       icon: 'fa-star',
       label: 'Skills'

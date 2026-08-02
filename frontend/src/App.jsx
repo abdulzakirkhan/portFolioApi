@@ -11,6 +11,8 @@ import AboutMe from './pages/AboutMe';
 import Education from './pages/Education';
 import Experience from './pages/Experience';
 import Portfolio from './pages/Portfolio';
+import Achievements from './pages/Achievements';
+import Updates from './pages/Updates';
 import Sections from './pages/Sections';
 import Items from './pages/Items';
 import Categories from './pages/Categories';
@@ -89,6 +91,22 @@ function AppContent() {
         element={
           <ProtectedRoute>
             <Portfolio />
+          </ProtectedRoute>
+        } 
+      />
+      <Route 
+        path="/dashboard/updates" 
+        element={
+          <ProtectedRoute>
+            <Updates />
+          </ProtectedRoute>
+        } 
+      />
+      <Route 
+        path="/dashboard/achievements" 
+        element={
+          <ProtectedRoute>
+            <Achievements />
           </ProtectedRoute>
         } 
       />

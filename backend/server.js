@@ -44,6 +44,7 @@ app.use('/api/education', require('./routes/education'));
 app.use('/api/skills', require('./routes/skills'));
 app.use('/api/experiences', require('./routes/experiences'));
 app.use('/api/portfolio', require('./routes/portfolio'));
+app.use('/api/achievements', require('./routes/achievements'));
 
 // Health check route
 app.get('/health', (req, res) => {
